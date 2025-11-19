@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologer Jayesh Sharma Ji - Expert Vedic Astrologer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 20px;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Specializations Section */
+        .specializations {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .specializations h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .spec-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .spec-item:hover {
+            transform: scale(1.05);
+        }
+
+        .spec-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 50px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .call-btn {
+            background: #4285F4;
+            color: white;
+        }
+
+        /* Moving Message Banner */
+        .moving-banner {
+            background: linear-gradient(90deg, #FF6B6B, #FFA500, #FFD700, #FF6B6B);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .moving-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+            padding-left: 100%;
+        }
+
+        .moving-text span {
+            margin: 0 50px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Contact Buttons in Contact Section */
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-link {
+            background: #25D366;
+            color: white;
+        }
+
+        .call-link {
+            background: #4285F4;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🔮 Astrologer Jayesh Sharma Ji</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Moving Message Banner -->
+    <div class="moving-banner">
+        <div class="moving-text">
+            <span>📞 CALL NOW: +91 9263974397</span>
+            <span>💬 WHATSAPP NOW: +91 9263974397</span>
+            <span>🌟 ALL WORK GUARANTEED - 100% SATISFACTION</span>
+            <span>✨ GET INSTANT SOLUTIONS TO ALL YOUR PROBLEMS</span>
+            <span>📞 CALL NOW: +91 9263974397</span>
+            <span>💬 WHATSAPP NOW: +91 9263974397</span>
+            <span>🌟 ALL WORK GUARANTEED - 100% SATISFACTION</span>
+            <span>✨ GET INSTANT SOLUTIONS TO ALL YOUR PROBLEMS</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Expert Vedic Astrologer</h1>
+        <p>Transform Your Life with Ancient Wisdom and Modern Solutions</p>
+        <button class="cta-button" onclick="scrollToContact()">Consult Now</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Astrologer Jayesh Sharma Ji</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Astrologer Jayesh Sharma Ji is an expert vedic astrologer. Astrology is in his blood because it is his family business which makes him to choose astrology as his future.</p>
+                <p>With years of experience and expertise, he has become one of the most renowned astrologers worldwide. Presently, he is involved in various astrological researches which enabled him to grow more spiritually.</p>
+                <p>He always does his best to ensure his client's satisfaction. His main purpose is to improve the lives of people with the usage of astrology.</p>
+            </div>
+            <div class="about-image">
+                <div style="width: 400px; height: 400px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <span style="font-size: 150px;">🔮</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Our Specializations</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📿</div>
+                <h3>Vedic Astrology</h3>
+                <p>Ancient wisdom to guide your path and understand your destiny</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Vastu Shastra</h3>
+                <p>Harmonize your space with cosmic energies for prosperity</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔢</div>
+                <h3>Numerology</h3>
+                <p>Unlock the power of numbers in your life journey</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✋</div>
+                <h3>Palm Reading</h3>
+                <p>Discover your future written in the lines of your hands</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specializations Section -->
+    <section class="specializations">
+        <h2>Problems We Solve</h2>
+        <div class="spec-list">
+            <div class="spec-item">
+                <h3>❤️ Love Related Issues</h3>
+                <p>Solve lover disputes and relationship problems</p>
+            </div>
+            <div class="spec-item">
+                <h3>💑 Marriage Related Issues</h3>
+                <p>Convince parents for desired marriage and marital harmony</p>
+            </div>
+            <div class="spec-item">
+                <h3>👨‍👩‍👧‍👦 Family Related Problems</h3>
+                <p>Restore peace and understanding in family matters</p>
+            </div>
+            <div class="spec-item">
+                <h3>💼 Career Related Problems</h3>
+                <p>Guide your professional path to success</p>
+            </div>
+            <div class="spec-item">
+                <h3>💰 Financial Issues</h3>
+                <p>Get rid of debt and attract prosperity</p>
+            </div>
+            <div class="spec-item">
+                <h3>🌟 Daily Life Problems</h3>
+                <p>Solutions for everyday challenges and obstacles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Online Astrological Guidance</h2>
+        <p>With the development in technology, taking astrological remedies or solutions has become very easy. Get solutions online to help you navigate life's challenges.</p>
+        <div class="contact-buttons">
+            <a href="tel:+919263974397" class="contact-link call-link">
+                📞 Call Now
+            </a>
+            <a href="https://wa.me/919263974397?text=Hello%2C%20I%20need%20astrological%20guidance" target="_blank" class="contact-link whatsapp-link">
+                💬 WhatsApp Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/919263974397?text=Hello%2C%20I%20need%20astrological%20guidance" target="_blank" class="float-btn whatsapp-btn" title="Chat on WhatsApp">
+            💬
+        </a>
+        <a href="tel:+919263974397" class="float-btn call-btn" title="Call Now">
+            📞
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Astrologer Jayesh Sharma Ji. All rights reserved.</p>
+        <p>Expert Vedic Astrologer | Vastu Consultant | Numerologist</p>
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
