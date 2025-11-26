@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ज्योतिषी जयेश शर्मा जी | Jyotishi Jayesh Sharma</title>
+    <title>ज्योतिषी मिर्तुंजय शास्त्री जी | Jyotishi Mirtunjay  Shashtri Ji</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; }
@@ -25,9 +25,17 @@
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
         
-        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero .hero-banner { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 12px; overflow: hidden; }
+            .hero .hero-image { width: 100%; height: auto; max-height: 70vh; object-fit: contain; display: block; background: #000; }
+        .hero .hero-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+        .hero .hero-overlay::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.28)); }
+        .hero .hero-cta { pointer-events: auto; position: relative; z-index: 2; }
         .hero .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; }
+        /* Puja video block (responsive) */
+        .puja-video-wrapper { max-width: 1200px; margin: 1.25rem auto; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+        .puja-video { width: 100%; height: auto; max-height: 70vh; display: block; background: #000; }
         .cta-btn { background: white; color: #667eea; padding: 12px 35px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: transform 0.3s; }
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         
@@ -37,7 +45,8 @@
         
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
         .about-text p { margin-bottom: 1rem; color: #555; }
-        .photo-placeholder { width: 100%; max-width: 350px; height: 350px; background: linear-gradient(135deg, #e0e0e0, #f5f5f5); border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 3px dashed #667eea; }
+        .photo-placeholder { width: 100%; max-width: 350px; height: 350px; background: linear-gradient(135deg, #e0e0e0, #f5f5f5); border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 3px dashed #667eea; overflow: hidden; }
+            .photo-placeholder .pandit-photo { max-width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block; }
         .photo-placeholder span { font-size: 60px; margin-bottom: 10px; }
         .photo-placeholder p { color: #667eea; font-weight: bold; }
         
@@ -52,6 +61,7 @@
         .gallery-item { height: 180px; background: linear-gradient(135deg, #e0e0e0, #f5f5f5); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #667eea; }
         .gallery-item span { font-size: 40px; }
         .gallery-item p { color: #667eea; font-size: 0.85rem; margin-top: 5px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
         
         .booking-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 20px; }
         .booking-container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
@@ -93,6 +103,8 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .hero .subtitle { font-size: 1rem; }
+                .hero .hero-image { max-height: 40vh; }
+            .puja-video { max-height: 40vh; }
             .about-grid { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
             .booking-container { padding: 1.5rem; }
@@ -122,13 +134,15 @@
             .hero h1 { font-size: 1.5rem; }
             .logo { font-size: 0.95rem; }
             .cta-btn { padding: 10px 25px; font-size: 0.9rem; }
+                .hero .hero-image { max-height: 25vh; }
+            .puja-video { max-height: 25vh; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">🔮 ज्योतिषी जयेश शर्मा जी</div>
+            <div class="logo">🔮 ज्योतिषी मिर्तुंजय शास्त्री जी</div>
             <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
             <ul class="nav-links">
                 <li><a href="#home" onclick="document.querySelector('.nav-links').classList.remove('active')">Home / होम</a></li>
@@ -143,33 +157,43 @@
 
     <div class="moving-banner">
         <div class="moving-text">
-            <span>📞 Call Now / अभी कॉल करें: +91 9263974397</span>
-            <span>💬 WhatsApp: +91 9263974397</span>
+            <span>📞 Call Now / अभी कॉल करें: +91 9241122748</span>
+            <span>💬 WhatsApp: +91 9241122748</span>
             <span>🌟 100% Satisfaction Guaranteed / 100% संतुष्टि गारंटी</span>
             <span>✨ Instant Solutions / तुरंत समाधान</span>
-            <span>📞 Call Now / अभी कॉल करें: +91 9263974397</span>
-            <span>💬 WhatsApp: +91 9263974397</span>
+            <span>📞 Call Now / अभी कॉल करें: +91 9241122748</span>
+            <span>💬 WhatsApp: +91 9241122748</span>
         </div>
     </div>
 
     <section class="hero" id="home">
-        <h1>ज्योतिषी जयेश शर्मा जी</h1>
-        <p class="subtitle">Expert Vedic Astrologer | विशेषज्ञ वैदिक ज्योतिषी</p>
-        <p style="margin-bottom:1.5rem;opacity:0.9">Transform your life with ancient wisdom & modern solutions<br>प्राचीन ज्ञान और आधुनिक समाधान से अपने जीवन को बदलें</p>
-        <button class="cta-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Consultation / परामर्श बुक करें</button>
+        <div class="hero-banner">
+            <img src="src/img-2.jpg" alt="Jyotishi Mirtunjay  Shashtri Ji" class="hero-image">
+            <div class="hero-overlay">
+                <button class="cta-btn hero-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">💬 Book Consultation / परामर्श बुक करें</button>
+            </div>
+        </div>
     </section>
+
+    <!-- Puja video: responsive block placed below hero -->
+    <div class="puja-video-wrapper">
+        <video class="puja-video" controls playsinline preload="metadata" poster="img-1.jpg">
+            <source src="src/puja-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <section id="about">
         <h2>About Pandit Ji / पंडित जी के बारे में</h2>
         <p class="section-subtitle">Trusted by thousands for accurate predictions & effective remedies<br>सटीक भविष्यवाणी और प्रभावी उपाय के लिए हजारों का विश्वास</p>
         <div class="about-grid">
             <div class="about-text">
-                <p><strong>English:</strong> Jyotishi Jayesh Sharma Ji is an expert Vedic astrologer with astrology running in his bloodline as a family tradition. With years of experience and expertise, he has become one of the most renowned astrologers worldwide.</p>
+                <p><strong>English:</strong> Jyotishi Mirtunjay  Shashtri Ji is an expert Vedic astrologer with astrology running in his bloodline as a family tradition. With years of experience and expertise, he has become one of the most renowned astrologers worldwide.</p>
                 <p>He is currently involved in various astrological researches which has enabled him to grow more spiritually. His main objective is to improve people's lives through the use of astrology.</p>
-                <p><strong>हिंदी:</strong> ज्योतिषी जयेश शर्मा जी एक विशेषज्ञ वैदिक ज्योतिषी हैं। ज्योतिष उनके खून में है क्योंकि यह उनका पारिवारिक व्यवसाय है। वर्षों के अनुभव के साथ, वे विश्वभर में सबसे प्रसिद्ध ज्योतिषियों में से एक बन गए हैं।</p>
+                <p><strong>हिंदी:</strong> ज्योतिषी मिर्तुंजय शास्त्री जी एक विशेषज्ञ वैदिक ज्योतिषी हैं। ज्योतिष उनके खून में है क्योंकि यह उनका पारिवारिक व्यवसाय है। वर्षों के अनुभव के साथ, वे विश्वभर में सबसे प्रसिद्ध ज्योतिषियों में से एक बन गए हैं।</p>
             </div>
             <div class="photo-placeholder">
-                <span>👨‍🦳</span>
+                <img src="src/pandit-ji.jpeg" alt="Pandit Ji Photo" class="pandit-photo">
                 <p>Pandit Ji Photo</p>
                 <p style="font-size:0.8rem;color:#888">पंडित जी की फोटो</p>
             </div>
@@ -195,12 +219,12 @@
         <h2>Photo Gallery / फोटो गैलरी</h2>
         <p class="section-subtitle">Glimpses of our work / हमारे कार्य की झलकियां</p>
         <div class="gallery">
-            <div class="gallery-item"><span>🕉️</span><p>Puja Photo 1</p></div>
-            <div class="gallery-item"><span>🔮</span><p>Consultation</p></div>
-            <div class="gallery-item"><span>🪔</span><p>Puja Photo 2</p></div>
-            <div class="gallery-item"><span>📿</span><p>Ceremonies</p></div>
-            <div class="gallery-item"><span>🏛️</span><p>Temple Visit</p></div>
-            <div class="gallery-item"><span>✨</span><p>Special Puja</p></div>
+            <div class="gallery-item"><img src="src/img-1.jpg" alt="Puja Photo 1"></div>
+            <div class="gallery-item"><img src="src/img-2.jpg" alt="Consultation"></div>
+            <div class="gallery-item"><img src="src/img-3.jpg" alt="Puja Photo 2"></div>
+            <div class="gallery-item"><img src="src/img-4.jpg" alt="Ceremonies"></div>
+            <div class="gallery-item"><img src="src/img-5.jpg" alt="Temple Visit"></div>
+            <div class="gallery-item"><img src="src/img-6.jpg" alt="Special Puja"></div>
         </div>
     </section>
 
@@ -304,19 +328,19 @@
         <h2>Contact Us / संपर्क करें</h2>
         <p class="section-subtitle">Get instant astrological guidance online<br>तुरंत ऑनलाइन ज्योतिषीय मार्गदर्शन प्राप्त करें</p>
         <div class="contact-btns">
-            <a href="tel:+919263974397" class="contact-btn call-btn">📞 Call Now / कॉल करें</a>
-            <a href="https://wa.me/919263974397?text=Namaste,%20I%20need%20astrological%20guidance" target="_blank" class="contact-btn wa-btn">💬 WhatsApp</a>
+            <a href="tel:+919241122748" class="contact-btn call-btn">📞 Call Now / कॉल करें</a>
+            <a href="https://wa.me/919241122748?text=Namaste,%20I%20need%20astrological%20guidance" target="_blank" class="contact-btn wa-btn">💬 WhatsApp</a>
         </div>
         <p style="margin-top:1.5rem;color:#666">📍 Available for services across India / पूरे भारत में सेवाएं उपलब्ध</p>
     </section>
 
     <div class="floating-btns">
-        <a href="https://wa.me/919263974397" target="_blank" class="float-btn float-wa">💬</a>
+        <a href="https://wa.me/919241122748" target="_blank" class="float-btn float-wa">💬</a>
         <a href="tel:+919263974397" class="float-btn float-call">📞</a>
     </div>
 
     <footer>
-        <p>© 2025 ज्योतिषी जयेश शर्मा जी | Jyotishi Jayesh Sharma Ji</p>
+        <p>© 2025 ज्योतिषी मिर्तुंजय शास्त्री जी | Jyotishi Mirtunjay  Shashtri Ji</p>
         <p>Expert Vedic Astrologer | Vastu Consultant | Numerologist</p>
         <p>विशेषज्ञ वैदिक ज्योतिषी | वास्तु सलाहकार | अंकशास्त्री</p>
     </footer>
@@ -361,7 +385,7 @@
 📝 *Purpose/Requirements:*
 ${d.purpose}`;
             
-            window.open(`https://wa.me/919263974397?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/919241122748?text=${encodeURIComponent(msg)}`, '_blank');
             document.getElementById('formMsg').className = 'form-msg success';
             document.getElementById('formMsg').textContent = '✅ WhatsApp opening... Please send the message! / व्हाट्सएप खुल रहा है... कृपया संदेश भेजें!';
             this.reset();
