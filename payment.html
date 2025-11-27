@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment / भुगतान</title>
+    <style>
+        body{font-family: 'Segoe UI', Tahoma, sans-serif; background:#f6f7fb; color:#222; margin:0}
+        .container{max-width:900px;margin:40px auto;padding:24px;background:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+        h1{color:#667eea}
+        .method{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fafcff);margin-bottom:12px;border:1px solid #e8eaf6}
+        .method strong{display:block;margin-bottom:6px}
+        .note{font-size:0.95rem;color:#555}
+        .qr-img{display:block;max-width:320px;width:80%;height:auto;margin:12px auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+        .pay-btn{background:#25D366;color:white;padding:12px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:700;font-size:1rem}
+        .back{display:inline-block;margin-top:14px;color:#667eea;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proceed to Payment / भुगतान करें</h1>
+        <p class="note">Please choose any of the methods below to make payment. After payment, use the button to share your payment receipt on WhatsApp with our team. (You can attach the image of the receipt in WhatsApp.)<br>कृपया भुगतान करने के लिए नीचे दिए गए किसी भी तरीके को चुनें। भुगतान के बाद, हमारी टीम को रसीद व्हाट्सएप पर साझा करने के लिए बटन का उपयोग करें। (व्हाट्सएप में रसीद की इमेज संलग्न करें।)</p>
+
+        <div class="method">
+            <strong>UPI (Recommended)</strong>
+            UPI ID: <code>paytm.s18qcca@pty</code><br>
+            Paytm
+        </div>
+
+        <div class="method">
+            <strong>Scan QR / QR स्कैन करें</strong>
+            <p class="note">Scan the QR code below using any UPI app (Google Pay / PhonePe / Paytm) or enter the UPI ID: <code>paytm.s18qcca@pty</code></p>
+            <img src="src/payment.jpeg" alt="Payment QR code" class="qr-img">
+            <p class="note">If you need help, call/WhatsApp: <a href="https://wa.me/919241122748" target="_blank">+91 92411 22748</a></p>
+        </div>
+
+        <hr style="margin:18px 0">
+
+        <button class="pay-btn" onclick="shareReceipt()">✅ I've Paid — Share Receipt on WhatsApp</button>
+
+        <p style="margin-top:12px;font-size:0.95rem;color:#444">What happens next: After you share the receipt, our team will confirm your booking and call you to finalise details.<br>आगे क्या होगा: रसीद साझा करने के बाद, हमारी टीम आपकी बुकिंग की पुष्टि करेगी और विवरण पुख्ता करने के लिए आपको कॉल करेगी।</p>
+
+        <a class="back" href="index.html">← Back to Booking / बुकिंग पर वापस</a>
+    </div>
+
+    <script>
+        function shareReceipt(){
+            const name = prompt('Your name / अपना नाम');
+            if(name===null) return;
+            const phone = prompt('Your mobile number (with country code) / मोबाइल नंबर (देश कोड सहित)', '+91');
+            if(phone===null) return;
+            const amount = prompt('Amount paid (₹) / भुगतान रक़म (₹)');
+            if(amount===null) return;
+            const msg = `Hello, I have completed payment.\nName: ${name}\nPhone: ${phone}\nAmount: ₹${amount}\nPlease find my payment receipt attached.`;
+            const url = 'https://wa.me/919241122748?text=' + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
