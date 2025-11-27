@@ -38,6 +38,9 @@
         .puja-video { width: 100%; height: auto; max-height: 70vh; display: block; background: #000; }
         .cta-btn { background: white; color: #667eea; padding: 12px 35px; font-size: 1rem; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: transform 0.3s; }
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+            /* Highlighted payment CTA */
+            .pay-cta { background: linear-gradient(135deg,#25D366 0%, #128C7E 100%); color: white; padding: 12px 36px; font-size: 1rem; border-radius: 50px; box-shadow: 0 12px 30px rgba(37,211,102,0.18); border: 2px solid rgba(0,0,0,0.05); display: inline-block; text-decoration: none; }
+            .pay-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(37,211,102,0.22); }
         
         section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
         h2 { font-size: 2rem; color: #667eea; margin-bottom: 0.5rem; text-align: center; }
@@ -313,16 +316,17 @@
                     </div>
                 </div>
                 
+                <button type="submit" class="submit-btn">💬 Send via WhatsApp / व्हाट्सएप से भेजें</button>
+
                 <div class="payment-notice">
                     <span>💳</span>
-                    <p><strong>Online Payment / ऑनलाइन भुगतान</strong></p>
+                    <p><strong>Contribute and book a worship / अंशदान कर पूजन बुक करें</strong></p>
                     <p style="font-size:0.9rem;color:#666">After you submit the booking form you may proceed to payment using the button below.<br>फॉर्म सबमिट करने के बाद आप नीचे दिए बटन से भुगतान कर सकते हैं।</p>
                 </div>
 
-                <button type="submit" class="submit-btn">💬 Send via WhatsApp / व्हाट्सएप से भेजें</button>
 
                 <div style="margin-top:14px;text-align:center;">
-                    <a href="payment.html" class="cta-btn" style="text-decoration:none; display:inline-block;">💳 Proceed to Payment / भुगतान करें</a>
+                    <a href="payment.html" class="cta-btn pay-cta">💳 Anshdan kar pujan book kare / अंशदान कर पूजन बुक करें</a>
                     <p style="font-size:0.9rem;color:#666;margin-top:8px;">After making payment, please share your payment receipt on WhatsApp at <a href="https://wa.me/919241122748" target="_blank">+91 92411 22748</a> or <a href="https://wa.me/919643876918" target="_blank">+91 96438 76918</a> mentioning your name and phone number.<br>भुगतान करने के बाद, कृपया अपना भुगतान रसीद व्हाट्सएप पर <a href="https://wa.me/919241122748" target="_blank">+91 92411 22748</a> या <a href="https://wa.me/919643876918" target="_blank">+91 96438 76918</a> पर भेजें और अपना नाम व मोबाइल नंबर बताएं।</p>
                 </div>
 
